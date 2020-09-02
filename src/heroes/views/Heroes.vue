@@ -18,7 +18,8 @@
 <script>
 export default {
   mounted() {
-    // TODO: GET HTTP REQUEST
+    // TODO: GET HTTP REQUEST X
+    // TODO: Action Vuex
   },
 };
 </script>
