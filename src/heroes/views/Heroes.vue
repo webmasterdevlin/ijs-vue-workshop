@@ -39,6 +39,22 @@
           <section class="card-body">
             <div class="row">
               <button
+                v-if="editingTracker === hero.id"
+                @click="() => (editingTracker = '0')"
+                class="btn btn-info card-link col text-center"
+              >
+                Cancel
+              </button>
+
+              <button
+                @click="() => (editingTracker = hero.id)"
+                v-else
+                class="btn btn-primary card-link col text-center"
+              >
+                Edit
+              </button>
+
+              <button
                 @click="removeHeroAction(hero.id)"
                 class="btn btn-outline-danger card-link col text-center"
               >
@@ -70,6 +86,8 @@ export default {
       house: "",
       knownAs: "",
     },
+
+    editingTracker: "0",
   }),
 
   mounted() {
