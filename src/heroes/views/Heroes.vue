@@ -16,10 +16,19 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
+  name: "Heroes",
+
   mounted() {
+    this.getHeroesAction();
     // TODO: GET HTTP REQUEST X
     // TODO: Action Vuex
+  },
+
+  methods: {
+    ...mapActions("heroModule", ["getHeroesAction"]),
   },
 };
 </script>
