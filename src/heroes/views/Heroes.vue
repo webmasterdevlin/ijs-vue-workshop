@@ -3,7 +3,11 @@
     <h1>Heroes</h1>
     <div style="display: flex; place-content: center; place-items: center;">
       <div class="mb-5">
-        <Form :text="'Save New Hero'" :obj="heroForm" />
+        <Form
+          :text="'Save New Hero'"
+          :obj="heroForm"
+          @handleSubmit="onSubmitHero"
+        />
       </div>
     </div>
     <div
@@ -81,6 +85,10 @@ export default {
 
   methods: {
     ...mapActions("heroModule", ["getHeroesAction", "removeHeroAction"]),
+
+    onSubmitHero() {
+      alert("onSubmitHero from Heroes.vue");
+    },
   },
 };
 </script>
