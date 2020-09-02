@@ -1,19 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 v-if="message.length">MESSAGE: {{ message }}</h1>
+    <h1 v-else>No messages</h1>
+
+    <input v-model="message" />
+
+    <button @mouseenter="clearMessage">Clear</button>
+
+    <div v-for="n in messages" :key="n">
+      <div>{{ n }}</div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+
+  data: () => ({
+    message: "Vuejs Workshop",
+    messages: ["naruto", "sasuke", "lee", "kakashi"],
+  }),
+
+  methods: {
+    clearMessage() {
+      this.message = "";
+    },
+    // other methods...
+  },
+
+  beforeCreate() {
+    console.log("beforeCreate");
+  },
+  created() {
+    console.log("created");
+  },
+  beforeMount() {
+    console.log("beforeMount");
+  },
+  mounted() {
+    console.log("mounted");
+    // HTTP GET REQUEST
+  },
+};
 </script>
 
 <style>
