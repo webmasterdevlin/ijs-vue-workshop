@@ -1,16 +1,25 @@
 <template>
   <div class="card my-3" style="width: auto;">
-    <form class="card-header" @submit.prevent="onSubmit">
+    <VeeForm
+      class="card-header"
+      @submit="onSubmit"
+      :validation-schema="reusableFormValidation"
+      style="min-width: 460px"
+    >
       <section class="d-flex flex-row">
         <div class="mt-3 mr-3 input-width">
           <section class="form-group">
-            <label for="firstName">First Name</label>
-            <input
-              autocomplete="off"
-              type="text"
+            <label for="firstName" class="mr-2">First Name</label>
+            <ErrorMessage name="firstName" class="text-danger" />
+            <Field
               id="firstName"
-              class="form-control"
               v-model="obj.firstName"
+              placeholder="📛"
+              autocomplete="off"
+              name="firstName"
+              as="input"
+              type="text"
+              class="form-control"
             />
           </section>
         </div>
@@ -42,7 +51,7 @@
         <input
           autocomplete="off"
           type="text"
-          id="house"
+          id="knownAs"
           class="form-control"
           v-model="obj.knownAs"
         />
@@ -51,16 +60,26 @@
         {{ text }}
       </button>
       <pre>{{ obj }}</pre>
-    </form>
+    </VeeForm>
   </div>
 </template>
 
 <script>
 import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
-import {} from "./heroYupValidation";
+import { reusableFormValidation } from "./reusableFormValidation";
 
 export default {
   name: "Form",
+
+  components: {
+    VeeForm,
+    Field,
+    ErrorMessage,
+  },
+
+  data: () => ({
+    reusableFormValidation,
+  }),
 
   props: {
     text: {

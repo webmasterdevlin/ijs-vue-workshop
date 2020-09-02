@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const heroYupValidation = Yup.object().shape({
+export const reusableFormValidation = Yup.object().shape({
   firstName: Yup.string()
     .label("First Name")
     .min(3)
