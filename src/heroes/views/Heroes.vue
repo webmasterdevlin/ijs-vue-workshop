@@ -33,7 +33,7 @@
         >
           <div v-if="editingTracker === hero.id">
             <div class="mb-5">
-              <h2>Update Form Here</h2>
+              <h2>TODO: A Form for Update Action</h2>
             </div>
           </div>
 
