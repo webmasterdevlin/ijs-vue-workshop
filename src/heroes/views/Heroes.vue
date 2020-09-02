@@ -36,7 +36,10 @@
               <Form
                 :text="'Update Hero'"
                 :obj="hero"
-                @handleSubmit="updateHeroAction(hero)"
+                @handleSubmit="
+                  updateHeroAction(hero);
+                  editingTracker = '0';
+                "
               />
             </div>
           </div>
