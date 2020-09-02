@@ -41,23 +41,31 @@
         </div>
       </section>
       <section class="form-group">
-        <label for="house" class="mt-3">House</label>
-        <input
-          autocomplete="off"
-          type="text"
+        <label for="house" class="mt-3 mr-2">House</label>
+        <ErrorMessage name="house" class="text-danger" />
+        <Field
           id="house"
-          class="form-control"
           v-model="obj.house"
+          placeholder="🏠"
+          autocomplete="off"
+          name="house"
+          as="input"
+          type="text"
+          class="form-control"
         />
       </section>
       <section class="form-group">
-        <label for="knownAs" class="mt-3">Known as</label>
-        <input
-          autocomplete="off"
-          type="text"
+        <label for="knownAs" class="mt-3 mr-2">Known as</label>
+        <ErrorMessage name="knownAs" class="text-danger" />
+        <Field
           id="knownAs"
-          class="form-control"
           v-model="obj.knownAs"
+          placeholder="👀"
+          autocomplete="off"
+          name="knownAs"
+          as="input"
+          type="text"
+          class="form-control"
         />
       </section>
       <button type="submit" class="btn btn-success mt-3">
