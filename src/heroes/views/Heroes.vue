@@ -3,7 +3,7 @@
     <h1>Heroes</h1>
     <div style="display: flex; place-content: center; place-items: center;">
       <div class="mb-5">
-        <Form />
+        <Form :text="'Save New Hero'" :obj="heroForm" />
       </div>
     </div>
     <div
@@ -57,6 +57,17 @@ export default {
   components: {
     Form,
   },
+
+  data: () => ({
+    heroForm: {
+      id: "",
+      firstName: "",
+      lastName: "",
+      house: "",
+      knownAs: "",
+    },
+  }),
+
   mounted() {
     this.getHeroesAction();
   },
