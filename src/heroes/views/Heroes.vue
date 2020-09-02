@@ -27,6 +27,16 @@
             <h5 class="card-subtitle mb-2 text-muted">{{ hero.house }}</h5>
             <p class="card-text">{{ hero.knownAs }}</p>
           </div>
+          <section class="card-body">
+            <div class="row">
+              <button
+                @click="deleteHero(hero.id)"
+                class="btn btn-outline-danger card-link col text-center"
+              >
+                Delete
+              </button>
+            </div>
+          </section>
         </div>
       </div>
     </section>
@@ -52,6 +62,10 @@ export default {
 
   methods: {
     ...mapActions("heroModule", ["getHeroesAction"]),
+
+    deleteHero(id) {
+      console.log(id);
+    },
   },
 };
 </script>
