@@ -12,6 +12,11 @@ const mutations = {
   [types.REMOVE_HERO](state, id) {
     state.heroes = state.heroes.filter((h) => h.id !== id);
   },
+
+  [types.ADD_HERO](state, heroData) {
+    console.log("MUTATIONS::", heroData);
+    state.heroes.push(heroData);
+  },
 };
 
 export default mutations;

@@ -84,10 +84,15 @@ export default {
   },
 
   methods: {
-    ...mapActions("heroModule", ["getHeroesAction", "removeHeroAction"]),
+    ...mapActions("heroModule", [
+      "getHeroesAction",
+      "removeHeroAction",
+      "addHeroAction",
+    ]),
 
     onSubmitHero() {
-      alert("onSubmitHero from Heroes.vue");
+      this.addHeroAction(this.heroForm);
+      this.heroForm = {};
     },
   },
 };
