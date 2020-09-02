@@ -56,6 +56,9 @@
 </template>
 
 <script>
+import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
+import {} from "./heroYupValidation";
+
 export default {
   name: "Form",
 

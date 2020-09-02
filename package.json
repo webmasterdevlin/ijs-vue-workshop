@@ -13,9 +13,11 @@
     "bootstrap": "^5.0.0-alpha1",
     "bootstrap-icons": "^1.0.0-alpha5",
     "core-js": "^3.6.5",
+    "vee-validate": "^4.0.0-alpha.10",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.0-beta.7",
-    "vuex": "^4.0.0-beta.4"
+    "vuex": "^4.0.0-beta.4",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
