@@ -2,7 +2,9 @@
   <div class="container-fluid">
     <h1>Heroes</h1>
     <div style="display: flex; place-content: center; place-items: center;">
-      <div class="mb-5"></div>
+      <div class="mb-5">
+        <Form />
+      </div>
     </div>
     <div
       v-if="isLoading"
@@ -48,10 +50,13 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import Form from "../../shared/components/Form";
 
 export default {
   name: "Heroes",
-
+  components: {
+    Form,
+  },
   mounted() {
     this.getHeroesAction();
   },
