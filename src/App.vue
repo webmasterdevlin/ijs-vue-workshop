@@ -1,47 +1,20 @@
 <template>
-  <div id="app">
-    <h1 v-if="message.length">MESSAGE: {{ message }}</h1>
-    <h1 v-else>No messages</h1>
-
-    <input v-model="message" />
-
-    <button @mouseenter="clearMessage">Clear</button>
-
-    <div v-for="n in messages" :key="n">
-      <div>{{ n }}</div>
-    </div>
+  <div>
+    <HeaderNav></HeaderNav>
   </div>
 </template>
 
 <script>
+import HeaderNav from "./shared/components/Navbar";
+
 export default {
   name: "App",
-
-  data: () => ({
-    message: "Vuejs Workshop",
-    messages: ["naruto", "sasuke", "lee", "kakashi"],
-  }),
-
-  methods: {
-    clearMessage() {
-      this.message = "";
-    },
-    // other methods...
+  components: {
+    HeaderNav,
   },
-
-  beforeCreate() {
-    console.log("beforeCreate");
-  },
-  created() {
-    console.log("created");
-  },
-  beforeMount() {
-    console.log("beforeMount");
-  },
-  mounted() {
-    console.log("mounted");
-    // HTTP GET REQUEST
-  },
+  data: () => ({}),
+  methods: {},
+  mounted() {},
 };
 </script>
 
