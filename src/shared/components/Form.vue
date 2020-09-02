@@ -25,13 +25,17 @@
         </div>
         <div class="mt-3 ml-3 input-width">
           <section class="form-group">
-            <label for="lastName">Last Name</label>
-            <input
-              autocomplete="off"
-              type="text"
+            <label for="lastName" class="mr-2">Last Name</label>
+            <ErrorMessage name="lastName" class="text-danger" />
+            <Field
               id="lastName"
-              class="form-control"
               v-model="obj.lastName"
+              placeholder="📛"
+              autocomplete="off"
+              name="lastName"
+              as="input"
+              type="text"
+              class="form-control"
             />
           </section>
         </div>
