@@ -29,3 +29,15 @@
     </form>
   </div>
 </template>
+
+<script>
+export default {
+  name: "Form",
+
+  props: {},
+
+  methods: {},
+};
+</script>
+
+<style scoped></style>
