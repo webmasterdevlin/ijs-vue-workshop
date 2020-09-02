@@ -1,6 +1,9 @@
 <template>
   <div>
     <HeaderNav></HeaderNav>
+    <div class="my-5">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
