@@ -1,6 +1,9 @@
 <template>
   <div class="container-fluid">
     <h1>Heroes</h1>
+    <div style="display: flex; place-content: center; place-items: center;">
+      <div class="mb-5"></div>
+    </div>
     <div
       v-if="isLoading"
       style="display: flex; flex-direction: row; justify-content: center;"
