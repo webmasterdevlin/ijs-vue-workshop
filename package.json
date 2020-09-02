@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "backend": "json-server --watch db.json --port 5000 --delay=1000 -m ./node_modules/json-server-auth",
+    "serve:full": "concurrently \"yarn run backend\" \"yarn run serve\""
   },
   "dependencies": {
     "bootstrap": "^5.0.0-alpha1",
@@ -19,7 +21,9 @@
     "@vue/compiler-sfc": "^3.0.0-0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0"
+    "eslint-plugin-vue": "^7.0.0-0",
+    "json-server": "^0.16.1",
+    "json-server-auth": "^2.0.2"
   },
   "browserslist": [
     "> 1%",
