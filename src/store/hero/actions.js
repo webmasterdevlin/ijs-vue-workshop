@@ -11,3 +11,9 @@ export function getHeroesAction({ commit }) {
     })
     .finally(() => commit(types.ISLOADING_HERO, false));
 }
+
+export function removeHeroAction({ commit }, payload) {
+  commit(types.ISLOADING_HERO, true);
+
+  //
+}
