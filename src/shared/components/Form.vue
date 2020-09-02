@@ -5,7 +5,13 @@
         <div class="mt-3 mr-3 input-width">
           <section class="form-group">
             <label for="firstName">First Name</label>
-            <input />
+            <input
+              autocomplete="off"
+              type="text"
+              id="firstName"
+              class="form-control"
+              v-model="obj.firstName"
+            />
           </section>
         </div>
         <div class="mt-3 ml-3 input-width">
@@ -24,7 +30,7 @@
         <input />
       </section>
       <button type="submit" class="btn btn-success mt-3">
-        text
+        {{ text }}
       </button>
     </form>
   </div>
@@ -34,7 +40,16 @@
 export default {
   name: "Form",
 
-  props: {},
+  props: {
+    text: {
+      type: String,
+      default: () => String,
+    },
+    obj: {
+      type: Object,
+      default: () => {},
+    },
+  },
 
   methods: {},
 };
