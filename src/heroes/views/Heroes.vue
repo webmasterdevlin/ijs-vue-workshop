@@ -14,3 +14,11 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    // TODO: GET HTTP REQUEST
+  },
+};
+</script>
