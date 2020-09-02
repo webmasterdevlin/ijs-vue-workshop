@@ -17,6 +17,11 @@ const mutations = {
     console.log("MUTATIONS::", heroData);
     state.heroes.push(heroData);
   },
+
+  [types.UPDATE_HERO](state, hero) {
+    const index = state.heroes.findIndex((h) => h.id === hero.id);
+    state.heroes[index] = hero;
+  },
 };
 
 export default mutations;

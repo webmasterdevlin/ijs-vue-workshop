@@ -33,7 +33,11 @@
         >
           <div v-if="editingTracker === hero.id">
             <div class="mb-5">
-              <h2>TODO: A Form for Update Action</h2>
+              <Form
+                :text="'Update Hero'"
+                :obj="hero"
+                @handleSubmit="updateHeroAction(hero)"
+              />
             </div>
           </div>
 
@@ -116,6 +120,7 @@ export default {
       "getHeroesAction",
       "removeHeroAction",
       "addHeroAction",
+      "updateHeroAction",
     ]),
 
     onSubmitHero() {

@@ -1,5 +1,5 @@
 import * as types from "./types";
-import { deleteById, get, post } from "../../shared/api-call";
+import { deleteById, get, post, put } from "../../shared/api-call";
 
 export function getHeroesAction({ commit }) {
   commit(types.ISLOADING_HERO, true);
@@ -28,6 +28,15 @@ export function addHeroAction({ commit }, payload) {
 
   return post("heroes", payload)
     .then(({ data }) => commit(types.ADD_HERO, data))
+    .catch((e) => console.log(e.message))
+    .finally(() => commit(types.ISLOADING_HERO, false));
+}
+
+export function updateHeroAction({ commit }, payload) {
+  commit(types.ISLOADING_HERO, true);
+
+  return put("heroes", payload)
+    .then(() => commit(types.UPDATE_HERO, payload))
     .catch((e) => console.log(e.message))
     .finally(() => commit(types.ISLOADING_HERO, false));
 }
