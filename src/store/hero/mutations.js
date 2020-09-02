@@ -9,3 +9,5 @@ const mutations = {
     state.isLoading = toggle;
   },
 };
+
+export default mutations;
